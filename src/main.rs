@@ -23,6 +23,12 @@ impl From<String> for Identifier {
     }
 }
 
+impl<'a> From<&'a str> for Identifier {
+    fn from(id: &'a str) -> Identifier {
+        Identifier::UUID(id.into())
+    }
+}
+
 impl From<u64> for Identifier {
     fn from(id: u64) -> Identifier {
         Identifier::Numeric(id)
@@ -54,4 +60,9 @@ fn should_accept_u64() {
 #[test]
 fn should_accept_uuid_string() {
     Record::new("49a6319c-38a9-11e6-8ed5-97272550a380".to_owned());
+}
+
+#[test]
+fn should_accept_uuid_str() {
+    Record::new("49a6319c-38a9-11e6-8ed5-97272550a380");
 }
