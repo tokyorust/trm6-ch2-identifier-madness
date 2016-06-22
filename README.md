@@ -20,4 +20,4 @@ Make `Record` accept a `&str` as well, for convenience reasons. Hint: the soluti
 
 ## (Optional bonus challenge 2)
 
-There may be no identifier at all for new records that haven't been saved yet. We are currently unable to represent those at all. Make `Record`'s `id` optional.
+There may be no identifier at all for new records that haven't been saved yet. We are currently unable to represent those at all. Make `Record`'s `id` optional. Additionally, add an `is_new(&self) -> bool` method into `Record` and create a test for it.
