@@ -1,5 +1,5 @@
 [package]
-name = "trm6_template"
+name = "trm6_ch2_interchangeable_strings_and_int"
 version = "0.1.0"
 
 [dependencies]

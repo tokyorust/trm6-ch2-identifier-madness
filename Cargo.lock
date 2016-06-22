@@ -1,5 +1,5 @@
 [root]
-name = "trm6_template"
+name = "trm6_ch2_interchangeable_strings_and_int"
 version = "0.1.0"
 dependencies = [
  "clippy 0.0.77 (registry+https://github.com/rust-lang/crates.io-index)",
