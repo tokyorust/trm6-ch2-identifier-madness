@@ -17,3 +17,7 @@ Simply make `cargo test` pass without removing any tests and you're done! For co
 ## (Optional bonus challenge 1)
 
 Make `Record` accept a `&str` as well, for convenience reasons. Hint: the solution from challenge 1 may not work so well this time!
+
+## (Optional bonus challenge 2)
+
+There may be no identifier at all for new records that haven't been saved yet. We are currently unable to represent those at all. Make `Record`'s `id` optional.
