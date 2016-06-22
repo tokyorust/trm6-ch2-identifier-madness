@@ -45,6 +45,10 @@ impl Record {
             id: id.map(|v| v.into()),
         }
     }
+
+    fn is_new(&self) -> bool {
+        self.id.is_none()
+    }
 }
 
 impl fmt::Display for Record {
@@ -80,4 +84,10 @@ fn should_accept_uuid_str() {
 fn should_accept_none() {
     Record::new::<String>(None);
     Record::new::<u64>(None);
+}
+
+#[test]
+fn should_be_new_only_on_none() {
+    assert_eq!(Record::new::<u64>(None).is_new(), true);
+    assert_eq!(Record::new(Some(1)).is_new(), false);
 }
