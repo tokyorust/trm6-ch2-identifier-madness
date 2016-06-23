@@ -21,3 +21,18 @@ Make `Record` accept a `&str` as well, for convenience reasons. Hint: the soluti
 ## (Optional bonus challenge 2)
 
 There may be no identifier at all for new records that haven't been saved yet. We are currently unable to represent those at all. Make `Record`'s `id` optional. Additionally, add an `is_new(&self) -> bool` method into `Record` and create a test for it.
+
+## (Optional bonus challenge 3)
+
+Now we're able to create identifiers just fine. But what about when we want to use it? Imagine a situation where you have the following code:
+
+```rust
+fn find_record(id: Identifier) -> Option<Record> {
+    let _query = format!("select * from records where id = {}", id);
+    // Code to run the imaginary query here, irrelevant for this task.
+    // Let's just return None and claim that we can't find anything.
+    None
+}
+```
+
+This won't compile. Think of a way to make it compile without adding too many lines inside the method itself. Note that the `UUID` should perhaps be quoted (preferably only in the context of the query), whereas `Numeric` doesn't need quoting at all.
